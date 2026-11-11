@@ -1,18 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1">
-<title>웹툰 보기</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사냥의 밤</title>
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body { background: #111; }
+body {
+  background: #111;
+}
 .webtoon {
   width: 100%;
   max-width: 800px;
@@ -30,10 +30,11 @@ body { background: #111; }
 
 <script>
 const viewer = document.getElementById("webtoon");
+const totalImages = 17;
 
-for (let i = 1; i <= 27; i++) {
+for (let i = 1; i <= totalImages; i++) {
   const img = document.createElement("img");
-  img.src = i + ".png";
+  img.src = i + ".png" + (i === 5 ? "?v=2" : "");
   img.alt = "웹툰 " + i;
   img.loading = i <= 2 ? "eager" : "lazy";
   viewer.appendChild(img);
@@ -41,4 +42,3 @@ for (let i = 1; i <= 27; i++) {
 </script>
 </body>
 </html>
-  
